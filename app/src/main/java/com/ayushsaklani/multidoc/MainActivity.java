@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.ayushsaklani.multidoc.camera.CameraActivity;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.security.Permission;
@@ -152,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initApp() {
+        Intent cameraIntent = new Intent(this, CameraActivity.class);
+        startActivity(cameraIntent);
+        finish();
     }
 
 

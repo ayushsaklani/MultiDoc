@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.Preview;
+import androidx.camera.core.impl.PreviewConfig;
+import androidx.camera.core.internal.ThreadConfig;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
 import android.os.Bundle;
+import android.util.Size;
 import android.view.WindowManager;
 
 import com.ayushsaklani.multidoc.R;
@@ -46,7 +49,9 @@ public class CameraActivity extends AppCompatActivity {
 
     private void bindImageAnalysis(@NonNull ProcessCameraProvider cameraProvider) {
         previewView.setImplementationMode(PreviewView.ImplementationMode.COMPATIBLE);
+
         Preview preview = new Preview.Builder()
+                .setTargetResolution(new Size(640,640))
                 .build();
         CameraSelector cameraSelector = new CameraSelector.Builder()
                 .requireLensFacing(CameraSelector.LENS_FACING_BACK)

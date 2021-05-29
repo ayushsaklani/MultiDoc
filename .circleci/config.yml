@@ -18,7 +18,7 @@ jobs:
       - android/save-build-cache
       - run:
           name: chmod permissions
-          command: chmod +x ./gradlew
+          command: sudo chmod +x ./gradlew
           when: always
       - run:
           name: Save test results

@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.AspectRatio;
 import androidx.camera.core.CameraSelector;
+import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
@@ -37,6 +38,7 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void bindImageAnalysis(@NonNull ProcessCameraProvider cameraProvider) {
+
         previewView.setImplementationMode(PreviewView.ImplementationMode.COMPATIBLE);
 
         Preview preview = new Preview.Builder()
